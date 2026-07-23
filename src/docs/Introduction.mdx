@@ -1,0 +1,76 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+<div className="eds-docs">
+
+# Enterprise Design System
+
+A production-ready **Lit** web component library with shared design tokens, typography, Storybook documentation, and Controls.
+
+Built for enterprise product teams that need framework-agnostic UI primitives with a clean, consistent visual language.
+
+## Author
+
+| | |
+| --- | --- |
+| **Name** | Subrahmanyam Poluru |
+| **Package** | `@poluru-labs/enterprise-design-system-wc` |
+| **Stack** | Lit · TypeScript · Vite · Storybook |
+
+## Quick start
+
+Install the package, load tokens once, then import components:
+
+<Source
+  language="bash"
+  code={`npm install @poluru-labs/enterprise-design-system-wc lit`}
+/>
+
+<Source
+  language="html"
+  dark
+  code={`<!-- tokens (once, at app root) -->
+<link rel="stylesheet" href="node_modules/@poluru-labs/enterprise-design-system-wc/tokens.css" />
+
+<script type="module">
+  import '@poluru-labs/enterprise-design-system-wc';
+</script>
+
+<eds-button variant="primary">Continue</eds-button>`}
+/>
+
+## What’s included
+
+- **Tokens** — color, typography, spacing, radius, elevation, motion
+- **Components** — Button, Tabs, Accordion, Modal
+- **Storybook** — Controls, Docs, a11y checks, copyable source
+- **TypeScript** — typed public API and CSS custom properties
+
+## Design principles
+
+1. **Clean over clever** — restrained surfaces, clear hierarchy, no visual noise  
+2. **Token-first** — components consume CSS variables, never hard-coded one-offs  
+3. **Accessible by default** — focus rings, keyboard support, ARIA roles  
+4. **Framework agnostic** — native custom elements work in any stack  
+
+## Integration
+
+Use these web components from Angular, React, or Vue — see the **Integration** section in the sidebar:
+
+- [Overview](?path=/docs/integration-overview--docs)
+- [Angular](?path=/docs/integration-angular--docs)
+- [React](?path=/docs/integration-react--docs)
+- [Vue](?path=/docs/integration-vue--docs)
+
+## Local development
+
+<Source
+  language="bash"
+  code={`npm install
+npm run storybook`}
+/>
+
+Open [http://localhost:6006](http://localhost:6006) to browse components, tweak Controls, and copy source from the Docs tab.
+
+</div>

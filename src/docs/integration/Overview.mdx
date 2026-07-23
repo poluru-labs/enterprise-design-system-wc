@@ -1,0 +1,145 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Integration/Overview" />
+
+<div className="eds-docs">
+
+# Integration
+
+Use `@poluru-labs/enterprise-design-system-wc` as **native custom elements** in any framework. Components register as `eds-*` tags when you import the package once.
+
+This section covers setup for:
+
+| Guide | Stack |
+| --- | --- |
+| [Angular](?path=/docs/integration-angular--docs) | Angular 17+ |
+| [React](?path=/docs/integration-react--docs) | React 18 / 19 |
+| [Vue](?path=/docs/integration-vue--docs) | Vue 3 |
+
+> Prefer first-class wrappers? Sibling packages also exist (`enterprise-design-system-angular`, `-react`, `-vue`, `-react-native`) with native APIs. These guides focus on consuming **this** web-components package directly.
+
+## Shared setup (all frameworks)
+
+### 1. Install
+
+<Source
+  language="bash"
+  code={`npm install @poluru-labs/enterprise-design-system-wc lit`}
+/>
+
+`lit` is a peer/runtime dependency of the design system.
+
+### 2. Load design tokens (once)
+
+Import CSS at the app root so `--eds-*` variables and the dark theme are available:
+
+<Source
+  language="ts"
+  code={`// preferred with bundlers (Vite, Webpack, Angular CLI, etc.)
+import '@poluru-labs/enterprise-design-system-wc/tokens.css';`}
+/>
+
+Or link from `node_modules` in plain HTML:
+
+<Source
+  language="html"
+  dark
+  code={`<link
+  rel="stylesheet"
+  href="node_modules/@poluru-labs/enterprise-design-system-wc/src/tokens/index.css"
+/>`}
+/>
+
+### 3. Register custom elements (once)
+
+Side-effect import registers every `eds-*` element:
+
+<Source
+  language="ts"
+  code={`import '@poluru-labs/enterprise-design-system-wc';`}
+/>
+
+You can also import named APIs:
+
+<Source
+  language="ts"
+  code={`import {
+  tokens,
+  showToast,
+  EdsButton,
+} from '@poluru-labs/enterprise-design-system-wc';`}
+/>
+
+### 4. Use tags in markup
+
+After registration, write HTML (or framework templates) with custom element tags:
+
+<Source
+  language="html"
+  dark
+  code={`<eds-button variant="primary">Continue</eds-button>
+
+<eds-alert variant="success" title="Saved" message="Your changes are live."></eds-alert>
+
+<eds-icon name="settings" size="md"></eds-icon>`}
+/>
+
+### 5. Light / dark theme
+
+Toggle class `eds-theme-dark` on `html` or `body`:
+
+<Source
+  language="ts"
+  code={`document.documentElement.classList.toggle('eds-theme-dark', isDark);`}
+/>
+
+<Source
+  language="html"
+  dark
+  code={`<html class="eds-theme-dark">
+  <!-- app -->
+</html>`}
+/>
+
+## Events
+
+Components emit DOM `CustomEvent`s (bubbling / composed where documented). Listen with `addEventListener` or framework event bindings:
+
+| Component | Common events |
+| --- | --- |
+| `eds-button` | `eds-click` |
+| `eds-input` | `eds-input`, `eds-change` |
+| `eds-modal` / `eds-drawer` | `eds-open`, `eds-close` |
+| `eds-toast` | `eds-close` |
+
+Example:
+
+<Source
+  language="ts"
+  code={`const button = document.querySelector('eds-button');
+button?.addEventListener('eds-click', (event) => {
+  console.log('clicked', event);
+});`}
+/>
+
+## Custom Elements Manifest
+
+IDE / docs tooling can load:
+
+<Source
+  language="text"
+  code={`@poluru-labs/enterprise-design-system-wc/custom-elements.json`}
+/>
+
+## Checklist
+
+1. Install package + Lit  
+2. Import `tokens.css` once  
+3. Import the package entry once (registers elements)  
+4. Use `eds-*` tags in templates  
+5. Bind props as attributes/properties; listen for `eds-*` events  
+6. Apply `eds-theme-dark` for dark mode  
+
+Next: pick your framework guide — **Angular**, **React**, or **Vue**.
+
+</div>

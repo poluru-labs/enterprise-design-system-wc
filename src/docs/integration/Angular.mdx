@@ -1,0 +1,200 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Integration/Angular" />
+
+<div className="eds-docs">
+
+# Angular
+
+Use Enterprise Design Systems web components inside an Angular application as custom elements.
+
+## Install
+
+<Source
+  language="bash"
+  code={`npm install @poluru-labs/enterprise-design-system-wc lit`}
+/>
+
+## 1. Allow custom elements
+
+Angular’s template compiler must allow unknown tags. Add `CUSTOM_ELEMENTS_SCHEMA` to the module or standalone component that uses `eds-*` tags.
+
+### Standalone application (recommended)
+
+<Source
+  language="ts"
+  code={`// app.config.ts or app.component.ts
+import { ApplicationConfig } from '@angular/core';
+import { provideZoneChangeDetection } from '@angular/core';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideZoneChangeDetection()],
+};
+
+// app.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './app.component.html',
+})
+export class AppComponent {}`}
+/>
+
+### NgModule apps
+
+<Source
+  language="ts"
+  code={`import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}`}
+/>
+
+## 2. Register elements + tokens once
+
+Import at application bootstrap (for example `main.ts`):
+
+<Source
+  language="ts"
+  code={`import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
+
+import '@poluru-labs/enterprise-design-system-wc/tokens.css';
+import '@poluru-labs/enterprise-design-system-wc';
+
+bootstrapApplication(AppComponent, appConfig).catch(console.error);`}
+/>
+
+If your Angular build does not resolve the CSS export, import the file path:
+
+<Source
+  language="ts"
+  code={`import '@poluru-labs/enterprise-design-system-wc/src/tokens/index.css';`}
+/>
+
+Or add it in `angular.json` → `styles`:
+
+<Source
+  language="json"
+  code={`{
+  "styles": [
+    "node_modules/@poluru-labs/enterprise-design-system-wc/src/tokens/index.css",
+    "src/styles.css"
+  ]
+}`}
+/>
+
+## 3. Use in templates
+
+Bind **properties** with `[prop]` and **events** with `(eds-event)`.
+
+<Source
+  language="html"
+  dark
+  code={`<eds-button
+  variant="primary"
+  [disabled]="saving"
+  (eds-click)="onSave()"
+>
+  Save
+</eds-button>
+
+<eds-input
+  label="Email"
+  type="email"
+  [value]="email"
+  [invalid]="emailInvalid"
+  error-message="Enter a valid email"
+  (eds-input)="email = $any($event).detail ?? $any($event).target.value"
+  (eds-change)="onEmailCommit($event)"
+></eds-input>
+
+<eds-alert
+  *ngIf="banner"
+  variant="info"
+  [title]="banner.title"
+  [message]="banner.message"
+  dismissible
+  (eds-dismiss)="banner = null"
+></eds-alert>`}
+/>
+
+> Attribute names with hyphens in HTML (e.g. `error-message`) map to camelCase properties (`errorMessage`) on the element. Prefer property binding when values are dynamic: `[errorMessage]="…"`.
+
+## 4. Theme (light / dark)
+
+Toggle `eds-theme-dark` on `document.documentElement` (or `body`):
+
+<Source
+  language="ts"
+  code={`import { Injectable, signal } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class EdsThemeService {
+  readonly theme = signal<'light' | 'dark'>('light');
+
+  setTheme(next: 'light' | 'dark') {
+    this.theme.set(next);
+    document.documentElement.classList.toggle('eds-theme-dark', next === 'dark');
+  }
+
+  toggle() {
+    this.setTheme(this.theme() === 'dark' ? 'light' : 'dark');
+  }
+}`}
+/>
+
+## 5. Imperative toasts
+
+<Source
+  language="ts"
+  code={`import { showToast } from '@poluru-labs/enterprise-design-system-wc';
+
+showToast({
+  title: 'Saved',
+  description: 'Profile updated.',
+  variant: 'success',
+});`}
+/>
+
+## Tips
+
+- Import the package **once** at bootstrap — do not re-import per feature module unless you need tree-shaken entry points later.
+- Forms: listen to `eds-input` / `eds-change` and sync into Angular form controls.
+- SSR: register custom elements only in the browser (`afterNextRender` / `isPlatformBrowser`).
+- For a full Angular-native port with services and `Eds*` components, see `@poluru-labs/enterprise-design-system-angular`.
+
+## Minimal example
+
+<Source
+  language="ts"
+  code={`// main.ts
+import '@poluru-labs/enterprise-design-system-wc/tokens.css';
+import '@poluru-labs/enterprise-design-system-wc';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent);`}
+/>
+
+<Source
+  language="html"
+  dark
+  code={`<!-- app.component.html -->
+<eds-button variant="primary" (eds-click)="onContinue()">
+  Continue
+</eds-button>`}
+/>
+
+</div>

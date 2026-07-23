@@ -1,0 +1,49 @@
+import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
+import { color } from '../tokens/tokens';
+
+<Meta title="Foundations/Themes" />
+
+<div className="eds-docs">
+
+# Themes
+
+The design system ships a **light** default and a **dark** theme.
+
+## Storybook
+
+Use the toolbar **Theme** switcher (addon-themes) to toggle `light` / `dark`. Dark mode applies the `eds-theme-dark` class on `body`.
+
+## In your app
+
+<Source
+  language="html"
+  dark
+  code={`<!-- dark theme -->
+<html class="eds-theme-dark">
+  ...
+</html>`}
+/>
+
+Or toggle at runtime:
+
+<Source
+  language="ts"
+  code={`document.body.classList.toggle('eds-theme-dark', prefersDark);`}
+/>
+
+## Light neutrals
+
+<ColorPalette>
+  <ColorItem
+    title="Ink"
+    colors={Object.fromEntries(Object.entries(color.ink).map(([k, v]) => [`ink-${k}`, v]))}
+  />
+  <ColorItem
+    title="Brand"
+    colors={Object.fromEntries(Object.entries(color.brand).map(([k, v]) => [`brand-${k}`, v]))}
+  />
+</ColorPalette>
+
+Dark theme remaps semantic aliases (`--eds-color-bg`, `--eds-color-surface`, `--eds-color-text`, shadows, focus) while keeping the brand scale.
+
+</div>

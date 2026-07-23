@@ -1,0 +1,118 @@
+{
+  "name": "@poluru-labs/enterprise-design-system-wc",
+  "version": "1.0.0",
+  "description": "Enterprise Design Systems — Lit web components, design tokens, Storybook, and Custom Elements Manifest.",
+  "author": {
+    "name": "Subrahmanyam Poluru",
+    "url": "https://github.com/poluru-labs"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/poluru-labs/enterprise-design-system-wc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poluru-labs/enterprise-design-system-wc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/poluru-labs/enterprise-design-system-wc/issues",
+    "email": "mail.polurus@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./src/tokens/index.css",
+    "./custom-elements.json": "./custom-elements.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/tokens",
+    "custom-elements.json",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css",
+    "./dist/**/*.js"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && npm run cem",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "cem": "cem analyze --config custom-elements-manifest.config.js",
+    "clean": "rm -rf dist storybook-static coverage *.tgz",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "pack:check": "npm pack --dry-run",
+    "release:check": "npm run verify && npm run pack:check",
+    "prepublishOnly": "npm run release:check",
+    "docs:publish": "node -e \"console.log('See docs/PUBLISHING.md')\""
+  },
+  "keywords": [
+    "design-system",
+    "enterprise-design-systems",
+    "web-components",
+    "custom-elements",
+    "lit",
+    "storybook",
+    "typescript",
+    "tokens",
+    "accessibility",
+    "enterprise",
+    "poluru-labs"
+  ],
+  "peerDependencies": {
+    "lit": "^3.2.0"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.4",
+    "@eslint/js": "^9.30.1",
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^8.6.14",
+    "@storybook/addon-themes": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/manager-api": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "@storybook/theming": "^8.6.14",
+    "@storybook/web-components": "^8.6.14",
+    "@storybook/web-components-vite": "^8.6.14",
+    "eslint": "^9.30.1",
+    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-wc": "^3.0.1",
+    "globals": "^16.3.0",
+    "happy-dom": "^18.0.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "storybook": "^8.6.14",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4"
+  },
+  "customElements": "custom-elements.json",
+  "engines": {
+    "node": ">=20"
+  }
+}

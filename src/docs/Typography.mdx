@@ -1,0 +1,67 @@
+import { Meta, Typeset, Source } from '@storybook/blocks';
+import { typography } from '../tokens/tokens';
+
+<Meta title="Foundations/Typography" />
+
+<div className="eds-docs">
+
+# Typography
+
+Type uses **Source Sans 3** for UI, **Source Serif 4** for display headings, and **IBM Plex Mono** for code.
+
+## Scale
+
+<Typeset
+  fontSizes={[
+    typography.fontSize['5xl'],
+    typography.fontSize['4xl'],
+    typography.fontSize['3xl'],
+    typography.fontSize['2xl'],
+    typography.fontSize.xl,
+    typography.fontSize.lg,
+    typography.fontSize.md,
+    typography.fontSize.sm,
+    typography.fontSize.xs,
+  ]}
+  fontWeight={typography.fontWeight.regular}
+  sampleText="Enterprise products deserve calm, readable type."
+  fontFamily={typography.fontFamily.sans}
+/>
+
+## Display
+
+<Typeset
+  fontSizes={[typography.fontSize['4xl'], typography.fontSize['3xl'], typography.fontSize['2xl']]}
+  fontWeight={typography.fontWeight.semibold}
+  sampleText="Clarity at every scale"
+  fontFamily={typography.fontFamily.display}
+/>
+
+## CSS tokens
+
+<Source
+  language="css"
+  dark
+  code={`.page-title {
+  font-family: var(--eds-font-display);
+  font-size: var(--eds-font-size-4xl);
+  font-weight: var(--eds-font-weight-semibold);
+  letter-spacing: var(--eds-letter-spacing-tight);
+  line-height: var(--eds-line-height-tight);
+}
+
+.body {
+  font-family: var(--eds-font-sans);
+  font-size: var(--eds-font-size-md);
+  line-height: var(--eds-line-height-relaxed);
+  color: var(--eds-color-text-muted);
+}`}
+/>
+
+## Guidelines
+
+- Prefer `md` (16px) for body copy and `sm` (14px) for dense UI.
+- Use display family only for page-level titles — not for buttons or form labels.
+- Keep line length around 60–75 characters for long-form text.
+
+</div>

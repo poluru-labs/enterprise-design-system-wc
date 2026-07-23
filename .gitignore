@@ -1,0 +1,13 @@
+node_modules
+dist
+storybook-static
+*.local
+.DS_Store
+*.log
+.vite
+coverage
+.turbo
+.cache
+*.tgz
+.idea
+.vscode

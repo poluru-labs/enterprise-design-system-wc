@@ -1,0 +1,239 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Integration/Vue" />
+
+<div className="eds-docs">
+
+# Vue
+
+Use Enterprise Design Systems web components inside Vue 3. Vue treats custom elements well once they are registered and listed as custom elements for the compiler.
+
+## Install
+
+<Source
+  language="bash"
+  code={`npm install @poluru-labs/enterprise-design-system-wc lit`}
+/>
+
+## 1. Register elements + tokens once
+
+In `main.ts`:
+
+<Source
+  language="ts"
+  code={`import { createApp } from 'vue';
+import App from './App.vue';
+
+import '@poluru-labs/enterprise-design-system-wc/tokens.css';
+import '@poluru-labs/enterprise-design-system-wc';
+
+createApp(App).mount('#app');`}
+/>
+
+## 2. Tell Vue which tags are custom elements
+
+### Vite + `vue` plugin
+
+<Source
+  language="ts"
+  code={`// vite.config.ts
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+
+export default defineConfig({
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('eds-'),
+        },
+      },
+    }),
+  ],
+});`}
+/>
+
+### Vue CLI / webpack
+
+<Source
+  language="js"
+  code={`// vue.config.js
+module.exports = {
+  chainWebpack: (config) => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap((options) => ({
+        ...options,
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('eds-'),
+        },
+      }));
+  },
+};`}
+/>
+
+Without `isCustomElement`, Vue may warn that `eds-*` components are unresolved.
+
+## 3. Use in SFCs
+
+Bind props with `:` / `v-bind` and listen with `@eds-event` (or `v-on`).
+
+<Source
+  language="vue"
+  dark
+  code={`<script setup lang="ts">
+import { ref } from 'vue';
+import { showToast } from '@poluru-labs/enterprise-design-system-wc';
+
+const email = ref('');
+const saving = ref(false);
+
+function onInput(event: Event) {
+  const detail = (event as CustomEvent<{ value?: string }>).detail;
+  const target = event.target as HTMLElement & { value?: string };
+  email.value = detail?.value ?? target.value ?? '';
+}
+
+async function onSave() {
+  saving.value = true;
+  try {
+    // await api.save(email.value)
+    showToast({ title: 'Saved', variant: 'success' });
+  } finally {
+    saving.value = false;
+  }
+}
+</script>
+
+<template>
+  <eds-input
+    label="Email"
+    type="email"
+    :value="email"
+    @eds-input="onInput"
+    @eds-change="onInput"
+  />
+
+  <eds-button
+    variant="primary"
+    :disabled="saving"
+    @eds-click="onSave"
+  >
+    Save
+  </eds-button>
+
+  <eds-alert
+    v-if="email"
+    variant="info"
+    title="Preview"
+    :message="email"
+  />
+</template>`}
+/>
+
+## 4. v-model pattern
+
+Web components do not use Vue’s `v-model` automatically. Bridge with value + events:
+
+<Source
+  language="vue"
+  dark
+  code={`<script setup lang="ts">
+import { computed } from 'vue';
+
+const model = defineModel<string>({ default: '' });
+
+function onEdsInput(event: Event) {
+  const detail = (event as CustomEvent<{ value?: string }>).detail;
+  const target = event.target as HTMLElement & { value?: string };
+  model.value = detail?.value ?? target.value ?? '';
+}
+</script>
+
+<template>
+  <eds-input
+    label="Name"
+    :value="model"
+    @eds-input="onEdsInput"
+    @eds-change="onEdsInput"
+  />
+</template>`}
+/>
+
+## 5. Theme (light / dark)
+
+<Source
+  language="ts"
+  code={`import { ref, watchEffect } from 'vue';
+
+const theme = ref<'light' | 'dark'>('light');
+
+watchEffect(() => {
+  document.documentElement.classList.toggle(
+    'eds-theme-dark',
+    theme.value === 'dark',
+  );
+});
+
+function toggleTheme() {
+  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+}`}
+/>
+
+In a template:
+
+<Source
+  language="html"
+  dark
+  code={`<eds-button variant="secondary" @eds-click="toggleTheme">
+  Toggle theme
+</eds-button>`}
+/>
+
+## 6. Slots
+
+Default and named slots work like native HTML:
+
+<Source
+  language="html"
+  dark
+  code={`<eds-card>
+  <div slot="header">Account</div>
+  <p>Profile details go here.</p>
+  <div slot="footer">
+    <eds-button variant="primary">Edit</eds-button>
+  </div>
+</eds-card>`}
+/>
+
+## Tips
+
+- Always configure `isCustomElement` for the `eds-` prefix.
+- Import tokens + package entry once in `main.ts`.
+- Boolean props: bind with `:disabled="true"` / omit or `:disabled="false"` as needed for your element.
+- For Vue SFCs with native Vue APIs (`EdsButton`, `provideEdsTheme`), use `@poluru-labs/enterprise-design-system-vue`.
+
+## Minimal example
+
+<Source
+  language="ts"
+  code={`// main.ts
+import { createApp } from 'vue';
+import App from './App.vue';
+import '@poluru-labs/enterprise-design-system-wc/tokens.css';
+import '@poluru-labs/enterprise-design-system-wc';
+
+createApp(App).mount('#app');`}
+/>
+
+<Source
+  language="vue"
+  dark
+  code={`<!-- App.vue -->
+<template>
+  <eds-button variant="primary">Continue</eds-button>
+</template>`}
+/>
+
+</div>

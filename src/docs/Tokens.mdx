@@ -1,0 +1,73 @@
+import { Meta, ColorPalette, ColorItem, Typeset, Source } from '@storybook/blocks';
+import { color, typography, spacing } from '../tokens/tokens';
+
+<Meta title="Foundations/Tokens" />
+
+<div className="eds-docs">
+
+# Design tokens
+
+Tokens are the single source of truth for color, type, space, and motion. They ship as CSS custom properties (`--eds-*`) and as a typed TypeScript object.
+
+## Usage
+
+<Source
+  language="css"
+  dark
+  code={`.card {
+  background: var(--eds-color-surface);
+  border: 1px solid var(--eds-color-border);
+  border-radius: var(--eds-radius-lg);
+  padding: var(--eds-space-6);
+  box-shadow: var(--eds-shadow-sm);
+}`}
+/>
+
+<Source
+  language="ts"
+  code={`import { tokens } from '@poluru-labs/enterprise-design-system-wc';
+
+console.log(tokens.color.brand[700]); // #0f6e6a`}
+/>
+
+## Brand & neutrals
+
+<ColorPalette>
+  <ColorItem
+    title="Brand"
+    subtitle="Primary actions and focus"
+    colors={Object.fromEntries(
+      Object.entries(color.brand).map(([k, v]) => [`brand-${k}`, v]),
+    )}
+  />
+  <ColorItem
+    title="Ink"
+    subtitle="Text and borders"
+    colors={Object.fromEntries(
+      Object.entries(color.ink).map(([k, v]) => [`ink-${k}`, v]),
+    )}
+  />
+</ColorPalette>
+
+## Semantic
+
+<ColorPalette>
+  <ColorItem title="Success" colors={{ 'success-600': color.success[600], 'success-100': color.success[100] }} />
+  <ColorItem title="Warning" colors={{ 'warning-600': color.warning[600], 'warning-100': color.warning[100] }} />
+  <ColorItem title="Danger" colors={{ 'danger-600': color.danger[600], 'danger-100': color.danger[100] }} />
+  <ColorItem title="Info" colors={{ 'info-600': color.info[600], 'info-100': color.info[100] }} />
+</ColorPalette>
+
+## Spacing scale
+
+| Token | Value |
+| --- | --- |
+| `--eds-space-1` | {spacing[1]} |
+| `--eds-space-2` | {spacing[2]} |
+| `--eds-space-3` | {spacing[3]} |
+| `--eds-space-4` | {spacing[4]} |
+| `--eds-space-6` | {spacing[6]} |
+| `--eds-space-8` | {spacing[8]} |
+| `--eds-space-12` | {spacing[12]} |
+
+</div>

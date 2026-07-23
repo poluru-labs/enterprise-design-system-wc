@@ -1,0 +1,79 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+import * as ButtonStories from '../components/button/button.stories';
+import * as InputStories from '../components/input/input.stories';
+import * as AlertStories from '../components/alert/alert.stories';
+
+<Meta title="Foundations/Copy to clipboard" />
+
+<div className="eds-docs">
+
+# Copy to clipboard
+
+Every component story includes a **copyable HTML snippet**:
+
+1. Under the canvas — dark **Snippet** panel with a **Copy** button  
+2. In the Docs **Show code** panel — Storybook’s built-in copy control  
+3. In MDX `Source` blocks — copy icon on the code fence  
+
+Snippets update when you change **Controls**.
+
+## How to copy
+
+1. Open any component (for example **Button → Primary**).  
+2. Find the **Snippet · html** panel below the preview.  
+3. Click **Copy**.  
+4. Or open **Docs** / **Show code** and use the copy icon there.
+
+## Live examples
+
+### Button
+
+<Canvas of={ButtonStories.WithIcon} sourceState="shown" />
+
+### Input
+
+<Canvas of={InputStories.Search} sourceState="shown" />
+
+### Alert
+
+<Canvas of={AlertStories.CustomIcon} sourceState="shown" />
+
+## Static Source blocks
+
+These are also copyable:
+
+<Source
+  language="html"
+  dark
+  code={`<eds-button variant="primary" icon="plus">
+  Add item
+</eds-button>`}
+/>
+
+<Source
+  language="ts"
+  code={`import '@poluru-labs/enterprise-design-system-wc';
+
+document.querySelector('eds-button')?.addEventListener('eds-click', () => {
+  console.log('clicked');
+});`}
+/>
+
+## Authoring snippets in stories
+
+Stories set `parameters.snippet` via `withSnippet`:
+
+<Source
+  language="ts"
+  code={`import { attr, withSnippet } from '../../storybook/snippet.js';
+
+const meta = {
+  parameters: {
+    ...withSnippet((args) =>
+      \`<eds-alert\${attr('variant', args.variant)}\${attr('title', args.title)}></eds-alert>\`,
+    ),
+  },
+};`}
+/>
+
+</div>
