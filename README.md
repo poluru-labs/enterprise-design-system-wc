@@ -2,12 +2,7 @@
 
 Token-driven enterprise UI library built with **Lit 3**, **TypeScript**, and **Storybook**.
 
-[![CI](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml/badge.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-
-**Package:** [`@poluru-labs/enterprise-design-system-wc`](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)  
-**Author:** [Subrahmanyam Poluru](https://github.com/poluru-labs) · Poluru Labs
+**Author:** [Subrahmanyam Poluru](https://github.com/poluru-labs) 
 
 | Doc | Link |
 | --- | --- |
