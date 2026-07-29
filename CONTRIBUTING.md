@@ -5,7 +5,7 @@ Thanks for your interest in contributing to `@poluru-labs/enterprise-design-syst
 ## Development setup
 
 ```bash
-git clone https://github.com/subrahmanyampoluru/enterprise-design-system-wc.git
+git clone https://github.com/poluru-labs/enterprise-design-system-wc.git
 cd enterprise-design-system-wc
 npm install
 npm run storybook   # http://localhost:6006
@@ -64,3 +64,11 @@ Use GitHub Issues with:
 ## Code of conduct
 
 See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+
+## Author
+
+Maintained by **[Subrahmanyam Poluru](https://polurus.com)** (Poluru Labs).
+
+- Portfolio: [polurus.com](https://polurus.com)
+- LinkedIn: [linkedin.com/in/polurus](https://www.linkedin.com/in/polurus/)
+- Support: [SUPPORT.md](./SUPPORT.md)

@@ -4,8 +4,16 @@
   "description": "Enterprise Design Systems — Lit web components, design tokens, Storybook, and Custom Elements Manifest.",
   "author": {
     "name": "Subrahmanyam Poluru",
-    "url": "https://github.com/poluru-labs"
+    "email": "mail.polurus@gmail.com",
+    "url": "https://polurus.com"
   },
+  "contributors": [
+    {
+      "name": "Subrahmanyam Poluru",
+      "email": "mail.polurus@gmail.com",
+      "url": "https://www.linkedin.com/in/polurus/"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://github.com/poluru-labs/enterprise-design-system-wc#readme",
   "repository": {
@@ -15,6 +23,10 @@
   "bugs": {
     "url": "https://github.com/poluru-labs/enterprise-design-system-wc/issues",
     "email": "mail.polurus@gmail.com"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://polurus.com"
   },
   "publishConfig": {
     "access": "public",
@@ -38,6 +50,8 @@
     "src/tokens",
     "custom-elements.json",
     "LICENSE",
+    "AUTHORS",
+    "NOTICE",
     "CHANGELOG.md",
     "README.md"
   ],

@@ -15,7 +15,9 @@
  * Dark theme: add class `eds-theme-dark` on `html` or `body`.
  *
  * @author Subrahmanyam Poluru — Poluru Labs
- * @see https://github.com/subrahmanyampoluru/enterprise-design-system-wc
+ * @see https://polurus.com
+ * @see https://www.linkedin.com/in/polurus/
+ * @see https://github.com/poluru-labs/enterprise-design-system-wc
  */
 
 export * from './tokens/index.js';

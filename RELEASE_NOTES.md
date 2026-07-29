@@ -11,7 +11,8 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 Initial public release of the **Enterprise Design System** (Lit web components + Storybook).
 
-**Author:** Subrahmanyam Poluru · Poluru Labs
+**Author:** [Subrahmanyam Poluru](https://polurus.com) · Poluru Labs  
+**LinkedIn:** [linkedin.com/in/polurus](https://www.linkedin.com/in/polurus/) · **Portfolio:** [polurus.com](https://polurus.com)
 
 ### Highlights
 

@@ -6,17 +6,32 @@ Token-driven enterprise UI library built with **Lit 3**, **TypeScript**, and **S
 [![npm](https://img.shields.io/npm/v/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-**Package:** [`@poluru-labs/enterprise-design-system-wc`](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)  
-**Author:** [Subrahmanyam Poluru](https://github.com/poluru-labs) · Poluru Labs
+**Package:** [`@poluru-labs/enterprise-design-system-wc`](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
+
+### Author
+
+**[Subrahmanyam Poluru](https://polurus.com)** — Poluru Labs
+
+Design systems architect and product engineer. Builds token-driven component libraries and documentation platforms for enterprise teams.
+
+| | |
+| --- | --- |
+| Portfolio | [polurus.com](https://polurus.com) |
+| LinkedIn | [linkedin.com/in/polurus](https://www.linkedin.com/in/polurus/) |
+| GitHub | [github.com/poluru-labs](https://github.com/poluru-labs) |
+| npm | [@poluru-labs/enterprise-design-system-wc](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc) |
 
 | Doc | Link |
 | --- | --- |
 | Changelog | [CHANGELOG.md](./CHANGELOG.md) |
 | Release notes | [RELEASE_NOTES.md](./RELEASE_NOTES.md) |
 | Contributing | [CONTRIBUTING.md](./CONTRIBUTING.md) |
+| Support | [SUPPORT.md](./SUPPORT.md) |
+| Authors | [AUTHORS](./AUTHORS) |
 | Publishing | [docs/PUBLISHING.md](./docs/PUBLISHING.md) |
 | Security | [SECURITY.md](./SECURITY.md) |
 | Code of conduct | [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) |
+| Notice | [NOTICE](./NOTICE) |
 
 ## Features
 
@@ -209,4 +224,18 @@ npm publish --access public
 
 ## License
 
-MIT © Subrahmanyam Poluru
+MIT © [Subrahmanyam Poluru](https://polurus.com) / Poluru Labs
+
+See [LICENSE](./LICENSE), [NOTICE](./NOTICE), and [AUTHORS](./AUTHORS).
+
+## Support
+
+Questions, bugs, and feature requests: see [SUPPORT.md](./SUPPORT.md).
+
+## Author
+
+Created and maintained by **[Subrahmanyam Poluru](https://polurus.com)**.
+
+- Portfolio: [polurus.com](https://polurus.com)
+- LinkedIn: [linkedin.com/in/polurus](https://www.linkedin.com/in/polurus/)
+- GitHub org: [poluru-labs](https://github.com/poluru-labs)
