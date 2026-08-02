@@ -2,6 +2,15 @@
 
 Token-driven enterprise UI library built with **Lit 3**, **TypeScript**, and **Storybook**. Framework-agnostic custom elements (`eds-*`) with design tokens, dark theme, and TypeScript types.
 
+## Demo
+
+
+Live Demo: [enterprise-design-system-wc](https://polurus.com/enterprise-design-system-wc/?path=/docs/introduction--documentation)
+
+## Playground
+
+Try it here: [enterprise-design-system-wc](https://polurus.com/enterprise-design-system-wc/?path=/docs/introduction--documentation)
+
 [![npm version](https://img.shields.io/npm/v/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![npm downloads](https://img.shields.io/npm/dm/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![License: MIT](https://img.shields.io/npm/l/@poluru-labs/enterprise-design-system-wc.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/blob/main/LICENSE)
