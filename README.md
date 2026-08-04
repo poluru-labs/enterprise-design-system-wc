@@ -6,6 +6,7 @@ Token-driven enterprise UI library built with **Lit 3**, **TypeScript**, and **S
 [![npm downloads](https://img.shields.io/npm/dm/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![License: MIT](https://img.shields.io/npm/l/@poluru-labs/enterprise-design-system-wc.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/blob/main/LICENSE)
 [![CI](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml/badge.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml)
+[![Demo](https://img.shields.io/badge/demo-Storybook-ff4785.svg)](https://polurus.com/enterprise-design-system-wc)
 
 ## Install
 
@@ -99,6 +100,7 @@ Modern evergreen browsers with native Custom Elements / ES modules (Chrome, Fire
 
 | Resource | Link |
 | --- | --- |
+| **Demo (Storybook)** | https://polurus.com/enterprise-design-system-wc |
 | GitHub | https://github.com/poluru-labs/enterprise-design-system-wc |
 | Changelog | https://github.com/poluru-labs/enterprise-design-system-wc/blob/main/CHANGELOG.md |
 | Contributing | https://github.com/poluru-labs/enterprise-design-system-wc/blob/main/CONTRIBUTING.md |
@@ -118,7 +120,7 @@ Open http://localhost:6006
 
 ## Author
 
-**[Subrahmanyam Poluru](https://polurus.com)** — Poluru Labs
+**[Subrahmanyam Poluru](https://polurus.com)** 
 
 Design systems architect and product engineer. Builds token-driven component libraries and documentation platforms for enterprise teams.
 

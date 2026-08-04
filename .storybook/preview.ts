@@ -3,6 +3,9 @@ import { themes } from '@storybook/theming';
 import { withThemeByClassName } from '@storybook/addon-themes';
 import '../src/tokens/index.css';
 import '../src/foundations/global.css';
+// Register all custom elements for Storybook (dev + static). Side-effect import —
+// required so Rollup does not drop Lit `@customElement` definitions.
+import '../src/components/index.js';
 import { resolveSnippet, withCopyableSnippet } from '../src/storybook/snippet.js';
 
 const preview: Preview = {

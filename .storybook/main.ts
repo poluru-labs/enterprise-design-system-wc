@@ -21,6 +21,15 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
+  async viteFinal(config) {
+    config.build ??= {};
+    config.build.rollupOptions ??= {};
+    // Preserve Lit custom element registration side effects in the static build.
+    config.build.rollupOptions.treeshake = {
+      moduleSideEffects: true,
+    };
+    return config;
+  },
 };
 
 export default config;

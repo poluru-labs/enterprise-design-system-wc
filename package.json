@@ -57,7 +57,11 @@
   ],
   "sideEffects": [
     "*.css",
-    "./dist/**/*.js"
+    "./dist/**/*.js",
+    "./src/components/**/*.ts",
+    "./src/components/**/*.js",
+    "./src/index.ts",
+    "./src/index.js"
   ],
   "scripts": {
     "dev": "vite",
