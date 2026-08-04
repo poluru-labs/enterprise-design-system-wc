@@ -2,8 +2,8 @@
 
 Token-driven enterprise UI library built with **Lit 3**, **TypeScript**, and **Storybook**. Framework-agnostic custom elements (`eds-*`) with design tokens, dark theme, and TypeScript types.
 
-## Demo
 
+## Demo
 
 Live Demo: [enterprise-design-system-wc](https://polurus.com/enterprise-design-system-wc/?path=/docs/introduction--documentation)
 
@@ -11,11 +11,18 @@ Live Demo: [enterprise-design-system-wc](https://polurus.com/enterprise-design-s
 
 Try it here: [enterprise-design-system-wc](https://polurus.com/enterprise-design-system-wc/?path=/docs/introduction--documentation)
 
+## Screenshot
+
+<img width="3360" height="4596" alt="image" src="https://github.com/user-attachments/assets/4de8db4a-b8ea-465c-bdb6-f67b6d7c3648" />
+
+
 [![npm version](https://img.shields.io/npm/v/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![npm downloads](https://img.shields.io/npm/dm/@poluru-labs/enterprise-design-system-wc.svg)](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-wc)
 [![License: MIT](https://img.shields.io/npm/l/@poluru-labs/enterprise-design-system-wc.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/blob/main/LICENSE)
 [![CI](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml/badge.svg)](https://github.com/poluru-labs/enterprise-design-system-wc/actions/workflows/ci.yml)
 [![Demo](https://img.shields.io/badge/demo-Storybook-ff4785.svg)](https://polurus.com/enterprise-design-system-wc)
+
+
 
 ## Install
 
