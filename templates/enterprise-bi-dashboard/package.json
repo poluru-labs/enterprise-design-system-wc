@@ -1,0 +1,57 @@
+{
+  "name": "enterprise-bi-dashboard",
+  "version": "1.0.0",
+  "description": "Enterprise business-intelligence workspace template built on @poluru-labs/enterprise-design-system-wc, Bootstrap 5, and Vite. Brand color #DA0037 on a light canvas.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Subrahmanyam Poluru",
+    "email": "mail.polurus@gmail.com",
+    "url": "https://polurus.com"
+  },
+  "contributors": [
+    {
+      "name": "Subrahmanyam Poluru",
+      "email": "mail.polurus@gmail.com",
+      "url": "https://www.linkedin.com/in/polurus/"
+    }
+  ],
+  "homepage": "https://github.com/poluru-labs/enterprise-web-components-templates/tree/main/enterprise-bi-dashboard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poluru-labs/enterprise-web-components-templates.git",
+    "directory": "enterprise-bi-dashboard"
+  },
+  "bugs": {
+    "url": "https://github.com/poluru-labs/enterprise-web-components-templates/issues",
+    "email": "mail.polurus@gmail.com"
+  },
+  "keywords": [
+    "bi-dashboard",
+    "enterprise",
+    "web-components",
+    "design-system",
+    "poluru-labs",
+    "vite",
+    "bootstrap"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@poluru-labs/enterprise-design-system-wc": "^1.0.0",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "vite": "^7.0.0",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,58 @@
+Enterprise BI Dashboard
+Copyright (c) 2026 Subrahmanyam Poluru / Poluru Labs
+
+This product is licensed under the MIT License. See the LICENSE file for the
+full license text.
+
+Author: Subrahmanyam Poluru
+Portfolio: https://polurus.com
+LinkedIn: https://www.linkedin.com/in/polurus/
+GitHub: https://github.com/poluru-labs
+Template: https://github.com/poluru-labs/enterprise-web-components-templates
+
+Third-party software
+--------------------
+
+This template redistributes or depends on the following projects. Each retains
+its own license. Review package-lock.json and each dependency’s LICENSE file
+before shipping a modified distribution.
+
+- @poluru-labs/enterprise-design-system-wc — MIT
+  Copyright (c) 2026 Subrahmanyam Poluru / Poluru Labs
+  https://github.com/poluru-labs/enterprise-design-system-wc
+
+- bootstrap — MIT
+  Copyright (c) The Bootstrap Authors
+  https://github.com/twbs/bootstrap
+
+- bootstrap-icons — MIT
+  Copyright (c) The Bootstrap Authors
+  https://github.com/twbs/icons
+
+- vite — MIT
+  Copyright (c) 2019-present VoidZero Inc. and Vite contributors
+  https://github.com/vitejs/vite
+
+- lit (transitive, via the design system) — BSD-3-Clause
+  Copyright (c) Google LLC
+  https://github.com/lit/lit
+
+Fonts loaded from Google Fonts at runtime (not bundled in this repository):
+
+- Source Sans 3 — SIL Open Font License 1.1 — Adobe
+- Source Serif 4 — SIL Open Font License 1.1 — Adobe
+- IBM Plex Mono — SIL Open Font License 1.1 — IBM Corp.
+
+Demo content
+------------
+
+All workspace names, people, metrics, SQL, and warehouse identifiers in this
+template are fictional. They are provided for user-interface demonstration
+only and are not production data, financial advice, or personal information.
+
+Trademarks
+----------
+
+Helix Analytics is the product name of this template. Poluru Labs is the
+copyright holder. Third-party product names remain the property of their
+respective owners and are used only for identification.
