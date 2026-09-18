@@ -63,7 +63,6 @@ export class EdsCard extends LitElement {
 
       .padded .header {
         padding: var(--eds-space-5) var(--eds-space-5) var(--eds-space-3);
-        border-bottom: 1px solid var(--eds-color-border);
       }
 
       .padded .body {
@@ -72,16 +71,11 @@ export class EdsCard extends LitElement {
 
       .padded .footer {
         padding: var(--eds-space-3) var(--eds-space-5) var(--eds-space-5);
-        border-top: 1px solid var(--eds-color-border);
       }
 
       .padded .media + .header,
       .padded .media + .body {
         padding-top: var(--eds-space-5);
-      }
-
-      .padded .media ::slotted(*) {
-        border-bottom: 1px solid var(--eds-color-border);
       }
     `,
   ];

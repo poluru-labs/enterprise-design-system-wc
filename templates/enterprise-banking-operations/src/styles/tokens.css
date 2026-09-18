@@ -1,0 +1,106 @@
+:root {
+  --st-brand: #0b3d5c;
+  --st-brand-deep: #082e46;
+  --st-brand-dark: #061f30;
+  --st-gold: #c4a35a;
+  --st-gold-deep: #9a7c38;
+  --st-canvas: #eaf2f6;
+  --st-ink: #102433;
+  --st-mute: #4d6574;
+  --st-paper: #f4f8fb;
+  --st-sheet: #ffffff;
+  --st-rule: #c5d4de;
+  --st-soft: #dce8ef;
+  --st-sidebar: 14.5rem;
+  --st-header: 5.75rem;
+
+  --eds-color-brand-900: #061f30;
+  --eds-color-brand-800: #082e46;
+  --eds-color-brand-700: #0b3d5c;
+  --eds-color-brand-600: #15547a;
+  --eds-color-brand-500: #1f6d99;
+  --eds-color-brand-400: #4d8fb3;
+  --eds-color-brand-300: #7eb0c9;
+  --eds-color-brand-200: #c5d4de;
+  --eds-color-brand-100: #dce8ef;
+  --eds-color-brand-50: #eaf2f6;
+  --eds-color-bg: var(--st-paper);
+  --eds-color-surface: var(--st-sheet);
+  --eds-color-focus: var(--st-brand);
+  --eds-color-primary: var(--st-brand);
+  --eds-color-primary-hover: var(--st-brand-deep);
+  --eds-color-primary-active: var(--st-brand-dark);
+  --eds-shadow-focus: 0 0 0 3px rgb(11 61 92 / 0.28);
+  --eds-font-sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --eds-font-display: 'Source Serif 4', 'Source Sans 3', serif;
+  --eds-radius-md: 8px;
+  --eds-radius-lg: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--st-ink);
+  background: var(--st-paper);
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 50;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: var(--st-brand);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.muted {
+  color: var(--st-mute);
+}
+
+.kicker {
+  color: var(--st-brand);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.boot-error {
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--st-rule);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--st-ink);
+}
+
+.boot-error pre {
+  overflow: auto;
+  white-space: pre-wrap;
+  color: var(--st-mute);
+}
